@@ -1,0 +1,41 @@
+{
+    "genres": [
+      { "id": 1, "name": "Pop" },
+      { "id": 2, "name": "Rock" },
+      { "id": 3, "name": "Hip-Hop" }
+    ],
+    "artists": [
+      { "id": 1, "name": "Taylor Swift", "genreId": 1 },
+      { "id": 2, "name": "Imagine Dragons", "genreId": 2 },
+      { "id": 3, "name": "Drake", "genreId": 3 },
+      { "id": 4, "name": "Adele", "genreId": 1 }
+    ],
+    "songs": [
+      { "id": 1, "title": "Shake It Off", "artistId": 1 },
+      { "id": 2, "title": "Blank Space", "artistId": 1 },
+      { "id": 3, "title": "Radioactive", "artistId": 2 },
+      { "id": 4, "title": "Believer", "artistId": 2 },
+      { "id": 5, "title": "Hotline Bling", "artistId": 3 },
+      { "id": 6, "title": "One Dance", "artistId": 3 },
+      { "id": 7, "title": "Hello", "artistId": 4 },
+      { "id": 8, "title": "Someone Like You", "artistId": 4 }
+    ],
+    "playlists": [
+      {
+        "id": 1,
+        "name": "My Pop Favorites",
+        "songs": [1, 2, 7]
+      },
+      {
+        "id": 2,
+        "name": "Workout Rock",
+        "songs": [3, 4]
+      },
+      {
+        "id": 3,
+        "name": "Chill Vibes",
+        "songs": [5, 8]
+      }
+    ]
+  }
+  
