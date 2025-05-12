@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Project</title>
     <link rel="stylesheet" href="../styling\nav.css">
-    <script src="../scripts/handleSongs.js" defer></script>
+    <script src="../scripts/handleLists.js" defer></script>
 </head>
 <body>
     <!--Header nav-->
@@ -23,7 +23,7 @@
                         <a href="#">Om oss</a>
                     </li>
                     <li class="menu-item">
-                        <a href="./lists.html">Dina listor</a>
+                        <a href="#">Dina listor</a>
                     </li>
                     <li class="menu-item">
                         <a href="#">Topplista</a>
@@ -39,23 +39,28 @@
 
         <article class="container">
             <section class="flex-container">
-                <h1>Music project</h1>
-                
+                <h1>Dina listor</h1>
+                <h3>Här kan du skapa en ny spellista!</h3>
+
+                <div
+                >
+                    <input type="text" id="playlistName" placeholder="Playlist name">
+                    <button onclick="createPlaylist()" class="btn">Create playlist</button>
+                </div>
             </section>
         </article>
-        <div id="trackContainer"></div>
+        <div id="playlistsContainer"></div>
 
 
 
 
-        <div id="playlistModal" class="modal" style="display: none;">
-            <div class="modal-content">
-              <span onclick="closePlaylistModal()" class="close">&times;</span>
-              <h3>Välj en spellista</h3>
-              <ul id="playlistList"></ul>
-            </div>
-          </div>
-          
+        <div id="songForm" style="display:none; margin-top: 20px;">
+                <h3>Lägg till låt i: <span id="currentPlaylistName"></span></h3>
+                <input type="text" id="songTitle" placeholder="Låttitel">
+                <input type="text" id="songArtist" placeholder="Artist">
+                <input type="text" id="songGenre" placeholder="Genre">
+                <button onclick="addSong()">Lägg till låt</button>
+        </div>
         
     </main>
     
