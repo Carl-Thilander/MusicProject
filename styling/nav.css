@@ -159,7 +159,7 @@ h1 {
 /* Rutnätslayout */
 .track-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat( 2,1fr);
     gap: 20px;
 }
 
