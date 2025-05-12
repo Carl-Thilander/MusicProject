@@ -1,6 +1,7 @@
 let allTracks = [];
 let playlists = JSON.parse(localStorage.getItem("playlists")) || [];
-let currentPlaylistIndex = localStorage.getItem("currentPlaylistIndex");
+let selectedTrackIndex = null;
+
 
 // Hämta och visa alla låtar
 fetch("../tracks.json")
@@ -28,12 +29,43 @@ function renderTracks() {
 }
 
 function addToUserPlaylist(trackIndex) {
-  if (currentPlaylistIndex === null || playlists.length === 0) {
+  if (playlists.length === 0) {
     alert("Du måste först skapa eller välja en spellista på 'Mina listor'-sidan.");
     return;
   }
 
-  playlists[currentPlaylistIndex].songs.push(allTracks[trackIndex]);
-  localStorage.setItem("playlists", JSON.stringify(playlists));
-  alert(`Låten "${allTracks[trackIndex].title}" har lagts till i spellistan "${playlists[currentPlaylistIndex].name}".`);
+  selectedTrackIndex = trackIndex;
+  showPlaylistModal();
 }
+
+
+
+function showPlaylistModal() {
+  const modal = document.getElementById("playlistModal");
+  const list = document.getElementById("playlistList");
+  list.innerHTML = "";
+
+  playlists.forEach((playlist, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <button onclick="addTrackToPlaylist(${selectedTrackIndex}, ${index})">
+        ${playlist.name}
+      </button>
+    `;
+    list.appendChild(li);
+  });
+
+  modal.style.display = "block";
+}
+
+function addTrackToPlaylist(trackIndex, playlistIndex) {
+  playlists[playlistIndex].songs.push(allTracks[trackIndex]);
+  localStorage.setItem("playlists", JSON.stringify(playlists));
+  closePlaylistModal();
+  alert(`Låten har lagts till i "${playlists[playlistIndex].name}"`);
+}
+
+function closePlaylistModal() {
+  document.getElementById("playlistModal").style.display = "none";
+}
+

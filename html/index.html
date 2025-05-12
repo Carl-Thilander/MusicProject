@@ -48,13 +48,14 @@
 
 
 
-        <div id="songForm" style="display:none; margin-top: 20px;">
-                <h3>Lägg till låt i: <span id="currentPlaylistName"></span></h3>
-                <input type="text" id="songTitle" placeholder="Låttitel">
-                <input type="text" id="songArtist" placeholder="Artist">
-                <input type="text" id="songGenre" placeholder="Genre">
-                <button onclick="addSong()">Lägg till låt</button>
-        </div>
+        <div id="playlistModal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <span onclick="closePlaylistModal()" class="close">&times;</span>
+              <h3>Välj en spellista</h3>
+              <ul id="playlistList"></ul>
+            </div>
+          </div>
+          
         
     </main>
     
