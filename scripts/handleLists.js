@@ -24,21 +24,16 @@ function renderPlaylists() {
     div.className = "playlist";
     div.innerHTML = `
       <strong>${playlist.name}</strong>
-      <button onclick="selectPlaylist(${index})">Välj</button>
-      <button onclick="deletePlaylist(${index})">🗑️</button>
+      <button onclick="deletePlaylist(${index})">Delete playlist🗑️</button>
       <ul>
         ${playlist.songs.map(song => `<li>${song.title} - ${song.artist} (${song.genre})</li>`).join("")}
       </ul>
+      
     `;
     container.appendChild(div);
   });
 }
 
-function selectPlaylist(index) {
-  currentPlaylistIndex = index;
-  localStorage.setItem("currentPlaylistIndex", index);
-  alert(`Du har valt spellistan: ${playlists[index].name}`);
-}
 
 function deletePlaylist(index) {
   if (confirm("Är du säker på att du vill ta bort denna spellista?")) {
