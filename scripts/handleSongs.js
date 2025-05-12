@@ -14,6 +14,7 @@ fetch("../tracks.json")
 function renderTracks() {
   const container = document.getElementById("trackContainer");
   container.innerHTML = "";
+  renderFilteredTracks(allTracks);
 
   allTracks.forEach((track, index) => {
     const div = document.createElement("div");
@@ -67,5 +68,34 @@ function addTrackToPlaylist(trackIndex, playlistIndex) {
 
 function closePlaylistModal() {
   document.getElementById("playlistModal").style.display = "none";
+}
+
+function filterTracksByGenre() {
+  const genreFilter = document.getElementById("genreFilter").value;
+
+  // Filter tracks based on the selected genre
+  const filteredTracks = genreFilter === "all"
+    ? allTracks
+    : allTracks.filter(track => track.genre === genreFilter);
+
+  // Render the filtered tracks
+  renderFilteredTracks(filteredTracks);
+}
+
+function renderFilteredTracks(tracks) {
+  const container = document.getElementById("trackContainer");
+  container.innerHTML = "";
+
+  tracks.forEach((track, index) => {
+    const div = document.createElement("div");
+    div.className = "track-card";
+    div.innerHTML = `
+      <h3>${track.title}</h3>
+      <p><strong>Artist:</strong> ${track.artist}</p>
+      <p><strong>Genre:</strong> ${track.genre}</p>
+      <button onclick="addToUserPlaylist(${index})">Lägg till i spellista</button>
+    `;
+    container.appendChild(div);
+  });
 }
 

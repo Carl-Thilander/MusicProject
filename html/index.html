@@ -43,6 +43,20 @@
                 
             </section>
         </article>
+        <div>
+            <label for="genreFilter">Filtrera med genre</label>
+            <select id="genreFilter" onchange="filterTracksByGenre()">
+                <option value="all">Alla låtar</option>
+                <option value="Pop">Pop</option>
+                <option value="Rock">Rock</option>
+                <option value="Soul">Soul</option>
+                <option value="Hip-Hop">Hip-Hop</option>
+                <option value="Folk">Folk</option>
+                <option value="R&B">R&B</option>
+                <option value="Country">Country</option>
+                <option value="Electronic">Electronic</option>
+            </select>
+        </div>
         <div id="trackContainer"></div>
 
 
