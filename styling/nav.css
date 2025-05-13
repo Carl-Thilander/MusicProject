@@ -141,12 +141,17 @@ h1 {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+   
   }
 
   .playlist li {
     list-style:none;
-    padding: 0;
+    padding: 5px;
+    margin: 5px;
+    color: antiquewhite;
     gap: 50px;
+    background-color: #333333;
+    border-radius: 5px;
   }
 
   .playlist ul{
@@ -176,6 +181,7 @@ h1 {
 
 .track-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 14px antiquewhite;
 }
 
 .track-card h3 {
