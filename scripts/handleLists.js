@@ -19,19 +19,28 @@ function renderPlaylists() {
   const container = document.getElementById("playlistsContainer");
   container.innerHTML = "";
 
-  playlists.forEach((playlist, index) => {
-    const div = document.createElement("div");
-    div.className = "playlist";
-    div.innerHTML = `
-      <strong>${playlist.name}</strong>
-      <button onclick="deletePlaylist(${index})">Delete playlist🗑️</button>
-      <ul>
-        ${playlist.songs.map(song => `<li>${song.title} - ${song.artist} (${song.genre})</li>`).join("")}
-      </ul>
-      
-    `;
-    container.appendChild(div);
-  });
+  playlists.forEach((playlist, playlistIndex) => {
+  const div = document.createElement("div");
+  div.className = "playlist";
+  div.innerHTML = `
+    <strong>${playlist.name}</strong>
+    <button onclick="deletePlaylist(${playlistIndex})">Delete playlist🗑️</button>
+    <ul>
+      ${playlist.songs.map((song, songIndex) => `
+        <li>
+          ${song.title} - ${song.artist} (${song.genre})
+          <button onclick="removeSongFromPlaylist(${playlistIndex}, ${songIndex})">Remove</button>
+        </li>
+      `).join("")}
+    </ul>
+  `;
+  container.appendChild(div);
+});
+}
+function removeSongFromPlaylist(playlistIndex, songIndex) {
+  playlists[playlistIndex].songs.splice(songIndex, 1);
+  localStorage.setItem("playlists", JSON.stringify(playlists));
+  renderPlaylists();
 }
 
 

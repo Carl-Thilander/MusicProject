@@ -1,0 +1,46 @@
+/* Rutnätslayout */
+.track-grid {
+    display: grid;
+    grid-template-columns: repeat( 2,1fr);
+    gap: 20px;
+}
+
+/* Musikkort */
+.track-card {
+    background-color: #333333;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.track-card:hover {
+    transform: translateY(-5px);
+}
+
+.track-card h3 {
+    margin-top: 0;
+    color: antiquewhite;
+}
+
+.track-card p {
+    margin: 5px 0;
+    color: antiquewhite;
+}
+
+.track-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #1DB954; /* Spotify-grön */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.track-card button:hover {
+    background-color: #159c45;
+}
