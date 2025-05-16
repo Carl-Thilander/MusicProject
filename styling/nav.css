@@ -91,6 +91,7 @@ h1 {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+   
   }
 
   .playlist li {
@@ -137,9 +138,10 @@ h1 {
     color:rgb(43, 226, 125)
   }
 
-  h1 {
-    font-size: 2rem;
-  }
+.track-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px antiquewhite;
+}
 
 
 
