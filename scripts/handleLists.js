@@ -23,7 +23,7 @@ function renderPlaylists() {
   const div = document.createElement("div");
   div.className = "playlist";
   div.innerHTML = `
-    <strong>${playlist.name}</strong>
+    <h3>${playlist.name}</h3>
     <button onclick="deletePlaylist(${playlistIndex})">Delete playlist🗑️</button>
     <ul>
       ${playlist.songs.map((song, songIndex) => `
