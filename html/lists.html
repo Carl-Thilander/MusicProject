@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Project</title>
+    <link rel="stylesheet" href="../styling\nav.css">
+    <script src="../scripts/handleLists.js" defer></script>
+</head>
+<body>
+    <!--Header nav-->
+    <header>
+        <nav>
+            <div class="headerContainer">
+                <ul>
+                    <li class="logo">
+                        <a href="#">Music project</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./index.html">Startsida</a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a href="#">Dina listor</a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--Body which will be updated dynamically-->
+    <main>
+
+
+        <article class="container">
+            <section class="flex-container">
+                <h1>Dina listor</h1>
+                <h3>Här kan du skapa en ny spellista!</h3>
+
+                <div
+                >
+                    <input type="text" id="playlistName" placeholder="Playlist name">
+                    <button onclick="createPlaylist()" class="btn">Create playlist</button>
+                </div>
+            </section>
+        </article>
+        <div id="playlistsContainer"></div>
+
+
+
+
+        
+        
+    </main>
+    
+</body>
+</html>
